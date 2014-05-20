@@ -1,11 +1,11 @@
 module XYZ {
-    interface I {
-        x: number,
-        y,
-        z
-    }
+  interface I {
+   x: number,
+   y,
+   z
+  }
 
-    var zZz = {
+    var zZz={
         a: 123,
         b: 456
     };
@@ -17,7 +17,7 @@ module XYZ {
 
     var y = 3;
 
-    switch (y) {
+    switch(y) {
         case X:
             console.log("x");
             break;
@@ -37,7 +37,7 @@ module XYZ {
     }
 
     export class X {
-        private x: number;
+        private x :number;
 
         constructor() {
             console.log("hi");

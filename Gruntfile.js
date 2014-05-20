@@ -31,17 +31,12 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    tslint: {
-      errors: {
+    tsfmt: {
+      test: {
         options: {
-          configuration: grunt.file.readJSON("tslint.json")
+            replace: false
         },
-        files: {
-          src: [
-            "test/fixtures/correctFile.ts",
-            "test/fixtures/errorFile1.ts",
-            "test/fixtures/errorFile2.ts"
-        ]}
+        files: { "tmp/formattedFile.ts": "test/fixtures/unformattedFile.ts" }
       }
     }
 
@@ -54,7 +49,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-clean");
 
-  grunt.registerTask("test", ["tslint"]);
+  grunt.registerTask("test", ["tsfmt"]);
 
   // By default, lint and run all tests.
   grunt.registerTask("default", ["jshint", "test"]);
