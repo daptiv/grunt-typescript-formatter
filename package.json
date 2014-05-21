@@ -1,22 +1,22 @@
 {
-  "name": "grunt-tsfmt",
+  "name": "grunt-typescript-formatter",
   "description": "Grunt formatter for TypeScript.",
   "version": "0.0.1",
-  "homepage": "https://github.com/daptiv/grunt-tsfmt",
+  "homepage": "https://github.com/daptiv/grunt-typescript-formatter",
   "author": {
     "name": "Jonathan Park, Daptiv"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/daptiv/grunt-tsfmt.git"
+    "url": "git://github.com/daptiv/grunt-typescript-formatter.git"
   },
   "bugs": {
-    "url": "https://github.com/daptiv/grunt-tsfmt/issues"
+    "url": "https://github.com/daptiv/grunt-typescript-formatter/issues"
   },
   "licenses": [
     {
       "type": "Apache-2.0",
-      "url": "https://github.com/daptiv/grunt-tsfmt/blob/master/LICENSE.txt"
+      "url": "https://github.com/daptiv/grunt-typescript-formatter/blob/master/LICENSE.txt"
     }
   ],
   "main": "Gruntfile.js",
@@ -27,7 +27,11 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "typescript-formatter": "~0.1.3"
+    "typescript-formatter": "~0.1.3",
+    "underscore": "^1.6.0"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.0",

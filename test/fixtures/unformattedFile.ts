@@ -17,7 +17,7 @@ module XYZ {
 
     var y = 3;
 
-    switch(y) {
+    switch(y {
         case X:
             console.log("x");
             break;
@@ -34,10 +34,10 @@ module XYZ {
               .b
               .c
               .d;
-    }
+
 
     export class X {
-        private x :number;
+        private x : number;
 
         constructor() {
             console.log("hi");

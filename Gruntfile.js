@@ -31,12 +31,12 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    tsfmt: {
+    'typescript-formatter': {
       test: {
         options: {
             replace: false
         },
-        files: { "tmp/formattedFile.ts": "test/fixtures/unformattedFile.ts" }
+        files: { "tmp/": "test/**/*.ts" }
       }
     }
 
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-clean");
 
-  grunt.registerTask("test", ["tsfmt"]);
+  grunt.registerTask("test", ["typescript-formatter"]);
 
   // By default, lint and run all tests.
   grunt.registerTask("default", ["jshint", "test"]);
