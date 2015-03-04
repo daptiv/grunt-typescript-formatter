@@ -2,6 +2,7 @@
 
 module.exports = function(grunt) {
   var _ = require('underscore');
+  require('native-promise-only');
   var path = require('path');
   var formatter = require("typescript-formatter");
 
