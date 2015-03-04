@@ -1,7 +1,7 @@
 {
   "name": "grunt-typescript-formatter",
   "description": "Grunt formatter for TypeScript.",
-  "version": "0.0.1",
+  "version": "0.2.2",
   "homepage": "https://github.com/daptiv/grunt-typescript-formatter",
   "author": {
     "name": "Jonathan Park, Daptiv"
