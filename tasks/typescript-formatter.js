@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     // Iterate over all specified file groups, async for 'streaming' output on large projects
     grunt.util.async.reduce(this.files, true, function(success, filePair, callback) {
       var files = filePair.src;
-      if (!grunt.file.isDir(filePair.dest)) {
+      if (!options.replace && !grunt.file.isDir(filePair.dest)) {
         grunt.log.error("Destination must be a folder", filePair.dest);
         failed++;
     }
