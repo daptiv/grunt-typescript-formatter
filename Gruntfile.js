@@ -16,24 +16,38 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     'typescript-formatter': {
-      test: {
+      replaceInTemp: {
         options: {
-            replace: false
+            replace: false,
+            verbose: true,
         },
         files: { "tmp/": "test/**/*.ts" }
+      },
+      verifyTemp: {
+        options: {
+            verbose: true,
+            replace: false,
+            verify: true
+        },
+        files:
+        {
+            src: ["tmp/**/*.ts"]
+        }
       }
+
     }
 
   });
 
   // Actually load this plugin's task(s).
-  grunt.loadTasks("tasks");
+  grunt.loadTasks("./tasks");
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-clean");
 
-  grunt.registerTask("test", ["typescript-formatter"]);
+  grunt.registerTask("test", ["typescript-formatter:replaceInTemp"]);
+  grunt.registerTask("test2", ["typescript-formatter:verifyTemp"]);
 
   // By default, lint and run all tests.
   grunt.registerTask("default", ["jshint", "test"]);
