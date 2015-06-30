@@ -30,11 +30,20 @@ module.exports = function(grunt) {
           return;
         }
 
-        _.each(result, function(file) {
-          if(!options.replace || !options.verify) {
-            grunt.file.write(path.resolve(filePair.dest, file.fileName), file.dest);
-          }
-        });
+        if(!options.replace)
+        {
+            if (!grunt.file.isDir(filePair.dest)) {
+              grunt.log.error("Destination must be a folder", filePair.dest);
+              failed++;
+              callback(true);
+              return;
+            } else {
+                _.each(result, function(file) {
+                  grunt.file.write(path.resolve(filePair.dest, file.fileName), file.dest);
+                });
+            }
+        }
+
         // Using setTimout as process.nextTick() doesn't flush
         setImmediate(function() {
           callback(null, success);
