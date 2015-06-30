@@ -1,7 +1,7 @@
 {
   "name": "grunt-typescript-formatter",
   "description": "Grunt formatter for TypeScript.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "homepage": "https://github.com/daptiv/grunt-typescript-formatter",
   "author": {
     "name": "Jonathan Park, Daptiv"
@@ -27,6 +27,7 @@
     "test": "grunt test"
   },
   "dependencies": {
+    "async": "^1.2.1",
     "native-promise-only": "^0.7.6-a",
     "underscore": "^1.6.0"
   },
@@ -40,7 +41,7 @@
   },
   "peerDependencies": {
     "grunt": "~0.4.1",
-    "typescript-formatter": "^0.2.2"
+    "typescript-formatter": "~0.4.0"
   },
   "keywords": [
     "gruntplugin"
